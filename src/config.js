@@ -19,9 +19,9 @@ export const CONFIG = {
             frameWidth: 520
         }
     },
-    animationSpeed: 15,
-    // playerSize: 0.2,
-    // characterSpeed: 20,
+    animationSpeed: 7,
+    moveSpeed: 1,
+    playerScale: 0.2,
     // surfaceSize: {
     //     x: 640,
     //     y: 320

@@ -97,18 +97,17 @@ body {
 
 /* Game Screen */
 #gameScreen {
-
-  #player {
+  .spritesheetBox {
     position: absolute;
     width: 520px;
     height: 420px;
     overflow: hidden;
-    transform-origin: 0 0;
-  }
+    background-color: #ff000010;
 
-  #spriteImg {
-    top: 0;
-    position: relative;
+    img {
+      top: 0;
+      position: relative;
+    }
   }
 }
 

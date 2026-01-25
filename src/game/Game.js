@@ -1,6 +1,6 @@
-import { CONFIG } from "../config";
 import KeyboardListener from "./KeyboardListener";
 import { Player } from "./Player";
+import { CONFIG } from "../config";
 
 export default class Game {
     // DOM Elements
@@ -8,6 +8,7 @@ export default class Game {
     player;
     spriteImg;
     item;
+    frame = 0;
 
     constructor(appElement) {
         this.appElement = appElement;
@@ -17,6 +18,14 @@ export default class Game {
         this.createElements();
         this.player = new Player(this.appElement);
         this.keyboardListener = new KeyboardListener();
+        setInterval(() => this.loop(), 10);
+    }
+
+    // Runs every millisecond
+    loop() {
+        if (this.frame % CONFIG.animationSpeed === 0) this.player.animate(this.keyboardListener.getMoveDirection());
+        if (this.frame % CONFIG.moveSpeed === 0) this.player.move(this.keyboardListener.getMoveDirection());
+        this.frame++;
     }
 
     /**

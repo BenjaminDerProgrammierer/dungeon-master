@@ -39,6 +39,13 @@ export default class KeyboardListener {
                 this.keysPressed.down = false;
             }
         });
+
+        window.addEventListener('blur', () => {
+            this.keysPressed.left = false;
+            this.keysPressed.right = false;
+            this.keysPressed.up = false;
+            this.keysPressed.down = false;
+        });
     }
 
     /**

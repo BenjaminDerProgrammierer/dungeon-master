@@ -5,28 +5,31 @@ export class Player extends Entity {
     spritesheet;
     spritesheetFrame = 0;
     spritesheetImgRef;
-    frame = 0;
 
     constructor(container) {
-        super(container, CONFIG.startPosition, CONFIG.playerSize);
-        this.ref.id = "player"
-        
+        super(container, CONFIG.startPosition, CONFIG.playerSize, CONFIG.playerScale);
+        this.ref.classList.add("spritesheetBox");
+
         this.spritesheetImgRef = document.createElement('img');
-        this.spritesheetImgRef.id = "spriteImg";
-        this.spritesheetImgRef.alt = "Daegal";
+        this.spritesheetImgRef.alt = "spritesheet";
         this.ref.appendChild(this.spritesheetImgRef);
 
         // Set starting position
-        this.ref.style.right = `${CONFIG.startPosition.x}px`;
+        this.ref.style.left = `${CONFIG.startPosition.x}px`;
         this.ref.style.top = `${CONFIG.startPosition.y}px`;
-
-        setInterval(() => this.loop(), 1);
     }
 
-    // Runs every millisecond;
-    loop() {
-        if (this.frame % CONFIG.animationSpeed === 0)this.animate(0);
-        this.frame++;
+    move(distance) {
+        if (Math.abs(distance.x) + Math.abs(distance.y) == 0) return;
+
+        console.log("Moving player", distance);
+        const scale = { y: CONFIG.playerScale };
+        if (distance.x < 0) {
+            scale.x = -CONFIG.playerScale;
+        } else {
+            scale.x = CONFIG.playerScale;
+        }
+        super.move(distance.x, distance.y, scale);
     }
 
     /**
@@ -34,6 +37,7 @@ export class Player extends Entity {
      * @param {number} speed 
      */
     animate(speed) {
+        speed = Math.abs(speed.x);
         if (speed > 0) {
             this.spritesheet = CONFIG.spritesheets.walking;
         } else {
