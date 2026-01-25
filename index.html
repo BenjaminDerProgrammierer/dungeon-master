@@ -1,0 +1,34 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Dungeon Master</title>
+
+    <script type="module" src="/src/main.js" defer></script>
+
+    <!-- Favicon -->
+    <link rel="icon" type="image/png" href="/favicon/favicon-96x96.png" sizes="96x96" />
+    <link rel="icon" type="image/svg+xml" href="/favicon/favicon.svg" />
+    <link rel="shortcut icon" href="/favicon/favicon.ico" />
+    <link rel="apple-touch-icon" sizes="180x180" href="/favicon/apple-touch-icon.png" />
+    <meta name="apple-mobile-web-app-title" content="Sprite Game" />
+    <link rel="manifest" href="/favicon/site.webmanifest" />
+  </head>
+  <body>
+    <section id="titleScreen">
+      <h1>
+        <img src="/favicon/apple-touch-icon.png" alt="icon" />
+        Dungeon Master
+      </h1>
+      <p class="highlightable-paragraph" id="description">
+        Help <strong>Daegal the Wraith</strong> navigate the dungeon and collect
+        <span class="shiny">treasures</span>!
+      </p>
+      <button id="startButton">Start</button>
+    </section>
+    <section id="gameScreen" style="display: none">
+      <div id="app"></div>
+    </section>
+  </body>
+</html>
