@@ -12,9 +12,39 @@ body {
   background-color: #1d1d1d;
 }
 
+/* Global Components */
+.highlightable-paragraph {
+  strong {
+    font-weight: normal;
+    text-shadow: 0 0 10px #ffffff;
+  }
+
+  .shiny {
+    color: #dddd00;
+    text-shadow: 0 0 5px #dddd00, 0 0 10px #dddd00;
+    animation: sparkle 5s infinite;
+  }
+}
+
+@keyframes sparkle {
+
+  0%,
+  100% {
+    text-shadow: 0 0 5px #dddd00, 0 0 10px #dddd00;
+    color: #dddd00;
+  }
+
+  50% {
+    text-shadow: 0 0 10px #dddd00, 0 0 20px #dddd00;
+    color: #ffff00;
+  }
+}
+
+/* Title Screen */
 #titleScreen {
   height: 100vh;
   width: 100vw;
+  padding: 1rem;
   display: flex;
   align-items: center;
   justify-content: center;
@@ -39,6 +69,7 @@ body {
 
   #description {
     font-family: 'MedievalSharp', cursive;
+    text-align: center;
   }
 
   #startButton {
@@ -52,6 +83,7 @@ body {
     font-family: 'MedievalSharp', cursive;
     border: none;
     font-size: 1em;
+    cursor: pointer;
 
     &:hover {
       --background-blend-color: #00000080;
@@ -63,64 +95,24 @@ body {
   }
 }
 
-.highlightable-paragraph {
-  strong {
-    font-weight: normal;
-    text-shadow: 0 0 10px #ffffff;
+/* Game Screen */
+#gameScreen {
+
+  #player {
+    position: absolute;
+    width: 520px;
+    height: 420px;
+    overflow: hidden;
+    transform-origin: 0 0;
   }
 
-  .shiny {
-    color: #dddd00;
-    text-shadow: 0 0 5px #dddd00, 0 0 10px #dddd00;
-
-    &:hover {
-      animation: sparkle 5s infinite;
-    }
-  }
-}
-
-@keyframes sparkle {
-
-  0%,
-  100% {
-    text-shadow: 0 0 5px #dddd00, 0 0 10px #dddd00;
-    color: #dddd00;
-  }
-
-  50% {
-    text-shadow: 0 0 10px #dddd00, 0 0 20px #dddd00;
-    color: #ffff00;
+  #spriteImg {
+    top: 0;
+    position: relative;
   }
 }
 
-/* #dashboard {
-  display: grid;
-  grid-template-columns: 25% 75%;
-  justify-content: center;
-  width: 70%;
-  margin: 0 auto;
-  padding: 1em 0;
-}
-
-#startButton {
-  color: #fff;
-  background-color: #222;
-  border: 3px solid rgb(68, 221, 183);
-  padding: 0.5em;
-  text-align: center;
-}
-
-#startButton:hover {
-  cursor: pointer;
-  background-color: #111;
-}
-
-#debugOutput {
-  color: #fff;
-  background-color: #222;
-  border: 3px solid rgb(68, 221, 183);
-  padding: 0.5em;
-}
+/*
 
 #surface {
   aspect-ratio: 16 / 9;
@@ -134,20 +126,6 @@ body {
   background-size: 20px;
 }
 
-#player {
-  position: absolute;
-  width: 520px;
-  height: 420px;
-  overflow: hidden;
-  display: none;
-  transform-origin: 0 0;
-}
-
-#spriteImg {
-  height: 420px;
-  bottom: 0;
-  position: relative;
-}
 
 #redBox {
   position: absolute;
