@@ -125,6 +125,9 @@ body {
   align-items: center;
   height: 100vh;
   background-image: url("assets/dark_castle/1/Dark\ Castle\ \(24\).jpg");
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
 
   #hud {
     position: absolute;
