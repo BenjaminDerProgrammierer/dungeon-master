@@ -22,7 +22,7 @@ export const CONFIG = {
     itemSize: {x: 30, y: 30},
     animationSpeed: 7,
     moveSpeed: 1,
-    movePerStep: 1,
+    movePerStep: 10,
     playerScale: 0.5,
     // surfaceSize: {
     //     x: 640,

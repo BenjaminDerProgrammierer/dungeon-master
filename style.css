@@ -145,11 +145,10 @@ body {
 #gameScreen {
   background-image: url("assets/dark_castle/1/Dark\ Castle\ \(24\).jpg");
   .spritesheetBox {
-    position: absolute;
     width: 520px;
     height: 420px;
     overflow: hidden;
-    background-color: #ff000010;
+    background: radial-gradient(circle at center, #45e6cb50 0%, transparent 70%, transparent 100%);
     transform-origin: top left;
 
     img {

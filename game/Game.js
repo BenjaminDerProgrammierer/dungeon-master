@@ -21,6 +21,18 @@ export default class Game {
         this.player = new Player(this.appElement);
         this.keyboardListener = new KeyboardListener();
         setInterval(() => this.loop(), 10);
+
+        document.addEventListener('keydown', (e) => {
+            if (e.key == 'k') {
+                this.item.scale.x += 1;
+                this.item.scale.y += 1;
+                this.item.redraw();
+            } else if (e.key == 'l')  {
+                this.item.scale.x -= 1;
+                this.item.scale.y -= 1;
+                this.item.redraw();               
+            }
+        })
     }
 
     // Runs every millisecond
