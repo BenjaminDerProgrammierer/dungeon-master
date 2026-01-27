@@ -58,17 +58,27 @@ body {
   background-repeat: no-repeat;
   background-size: cover;
 
+  &>* {
+    max-width: 1400px;
+  }
+
   h1 {
     display: flex;
     align-items: center;
     gap: 0.5em;
     font-family: 'Metamorphous', serif;
     font-size: 3em;
+    text-align: center;
 
     img {
       height: 1em;
       border-radius: 20%;
     }
+  }
+
+  h2 {
+    font-family: 'Metamorphous', serif;
+    text-align: center;
   }
 
   .description {
