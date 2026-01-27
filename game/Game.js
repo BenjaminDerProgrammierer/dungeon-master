@@ -1,7 +1,7 @@
-import KeyboardListener from "./KeyboardListener";
-import { Player } from "./Player";
-import { CONFIG } from "../config";
-import { Item } from "./Item";
+import KeyboardListener from "./KeyboardListener.js";
+import { Player } from "./Player.js";
+import { CONFIG } from "../config.js";
+import { Item } from "./Item.js";
 
 export default class Game {
     // DOM Elements
@@ -31,9 +31,8 @@ export default class Game {
         if (this.player.isCollidingWith(this.item)) {
             this.score++;
             this.item.moveToRandom();
-        } else {
-            console.log("No collision");
         }
+        
         this.frame++;
     }
 }

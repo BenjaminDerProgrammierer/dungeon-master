@@ -1,12 +1,12 @@
-import { CONFIG } from "../config";
-import { Entity } from "./Entity";
+import { CONFIG } from "../config.js";
+import { Entity } from "./Entity.js";
 
 export class Item extends Entity {
     texture;
 
     constructor(container) {
         super(container, {x: 100, y: 100}, CONFIG.itemSize, CONFIG.itemScale);
-        this.texture = "craftpix-556112-free-crystals-2d-game-items/PNG/shiny/4.png"
+        this.texture = "assets/craftpix-556112-free-crystals-2d-game-items/PNG/shiny/4.png"
         this.redraw();
     }
 

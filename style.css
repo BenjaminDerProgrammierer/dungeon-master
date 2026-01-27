@@ -59,7 +59,7 @@ body {
   flex-direction: column;
   font-size: 2rem;
   gap: 1em;
-  background: url('dark_castle/1/Dark Castle (7).jpg'), #00000080;
+  background: url('assets/dark_castle/1/Dark Castle (7).jpg'), #00000080;
   background-position: center;
   background-blend-mode: multiply;
 
@@ -85,7 +85,7 @@ body {
     --background-blend-color: #00000060;
     border-radius: 0;
     padding: 0.5em 1em;
-    background: url('stone-tile.jpg'), var(--background-blend-color);
+    background: url('assets/stone-tile.jpg'), var(--background-blend-color);
     background-blend-mode: multiply;
     background-size: 100px;
     color: white;
@@ -143,7 +143,7 @@ body {
 
 /* Game Screen */
 #gameScreen {
-  background-image: url("/public/dark_castle/1/Dark\ Castle\ \(24\).jpg Castle (24).jpg");
+  background-image: url("assets/dark_castle/1/Dark\ Castle\ \(24\).jpg");
   .spritesheetBox {
     position: absolute;
     width: 520px;
@@ -169,14 +169,4 @@ body {
   justify-content: center;
   align-items: center;
   height: 100vh;
-}
-
-#surface {
-  aspect-ratio: 16 / 9;
-  width: 80%;
-  background-color: #222;
-  border: 3px solid var(--color-4);
-  background-image: url('Ground&Stone/Stone/ground5.png');
-  background-size: 20px;
-  position: relative;
 }

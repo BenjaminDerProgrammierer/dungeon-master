@@ -1,5 +1,5 @@
-import { CONFIG } from "../config";
-import { Entity } from "./Entity";
+import { CONFIG } from "../config.js";
+import { Entity } from "./Entity.js";
 
 export class Player extends Entity {
     spritesheet;

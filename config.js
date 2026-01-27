@@ -9,12 +9,12 @@ export const CONFIG = {
     },
     spritesheets: {
         idle: {
-            src: 'spritesheet-idle.png',
+            src: 'assets/spritesheet-idle.png',
             frameCount: 11,
             frameWidth: 520
         },
         walking: {
-            src: 'spritesheet-walking.png',
+            src: 'assets/spritesheet-walking.png',
             frameCount: 11,
             frameWidth: 520
         }
@@ -22,7 +22,8 @@ export const CONFIG = {
     itemSize: {x: 30, y: 30},
     animationSpeed: 7,
     moveSpeed: 1,
-    playerScale: 0.2,
+    movePerStep: 1,
+    playerScale: 0.5,
     // surfaceSize: {
     //     x: 640,
     //     y: 320
