@@ -1,6 +1,7 @@
 import KeyboardListener from "./KeyboardListener";
 import { Player } from "./Player";
 import { CONFIG } from "../config";
+import { Item } from "./Item";
 
 export default class Game {
     // DOM Elements
@@ -9,13 +10,14 @@ export default class Game {
     spriteImg;
     item;
     frame = 0;
+    score = 0;
 
     constructor(appElement) {
         this.appElement = appElement;
     }
 
     run() {
-        this.createElements();
+        this.item = new Item(this.appElement)
         this.player = new Player(this.appElement);
         this.keyboardListener = new KeyboardListener();
         setInterval(() => this.loop(), 10);
@@ -25,16 +27,13 @@ export default class Game {
     loop() {
         if (this.frame % CONFIG.animationSpeed === 0) this.player.animate(this.keyboardListener.getMoveDirection());
         if (this.frame % CONFIG.moveSpeed === 0) this.player.move(this.keyboardListener.getMoveDirection());
+        
+        if (this.player.isCollidingWith(this.item)) {
+            this.score++;
+            this.item.moveToRandom();
+        } else {
+            console.log("No collision");
+        }
         this.frame++;
     }
-
-    /**
-     * Creates the Player and an item
-     */
-    createElements() {
-        this.item = document.createElement('div');
-        this.item.id = "item";
-        this.appElement.appendChild(this.item);
-    }
-
 }

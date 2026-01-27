@@ -4,8 +4,8 @@ export const CONFIG = {
         y: 0
     },
     playerSize: {
-        width: 100,
-        height: 100
+        x: 520,
+        y: 420
     },
     spritesheets: {
         idle: {
@@ -19,6 +19,7 @@ export const CONFIG = {
             frameWidth: 520
         }
     },
+    itemSize: {x: 30, y: 30},
     animationSpeed: 7,
     moveSpeed: 1,
     playerScale: 0.2,

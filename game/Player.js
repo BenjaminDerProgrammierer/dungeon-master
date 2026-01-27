@@ -10,9 +10,12 @@ export class Player extends Entity {
         super(container, CONFIG.startPosition, CONFIG.playerSize, CONFIG.playerScale);
         this.ref.classList.add("spritesheetBox");
 
+        this.swapperRef = document.createElement('div');
+        this.ref.appendChild(this.swapperRef)
+
         this.spritesheetImgRef = document.createElement('img');
         this.spritesheetImgRef.alt = "spritesheet";
-        this.ref.appendChild(this.spritesheetImgRef);
+        this.swapperRef.appendChild(this.spritesheetImgRef);
 
         // Set starting position
         this.ref.style.left = `${CONFIG.startPosition.x}px`;
@@ -22,14 +25,14 @@ export class Player extends Entity {
     move(distance) {
         if (Math.abs(distance.x) + Math.abs(distance.y) == 0) return;
 
-        console.log("Moving player", distance);
-        const scale = { y: CONFIG.playerScale };
+        let direction;
         if (distance.x < 0) {
-            scale.x = -CONFIG.playerScale;
+            direction = -1;
         } else {
-            scale.x = CONFIG.playerScale;
+            direction = 1;
         }
-        super.move(distance.x, distance.y, scale);
+        this.swapperRef.style.transform = `scaleX(${direction})`;
+        super.move(distance.x, distance.y, { y: CONFIG.playerScale, x: CONFIG.playerScale }, direction);
     }
 
     /**
