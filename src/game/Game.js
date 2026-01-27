@@ -2,6 +2,7 @@ import KeyboardListener from "./KeyboardListener.js";
 import { Player } from "./Player.js";
 import { CONFIG } from "../config.js";
 import { Item } from "./Item.js";
+import { HeadUpDisplay } from "./HeadUpDisplay.js";
 
 export default class Game {
     // DOM Elements
@@ -20,6 +21,7 @@ export default class Game {
         this.item = new Item(this.appElement)
         this.player = new Player(this.appElement);
         this.keyboardListener = new KeyboardListener();
+        this.hud = new HeadUpDisplay(this.appElement);
         setInterval(() => this.loop(), 10);
 
         document.addEventListener('keydown', (e) => {
@@ -45,6 +47,7 @@ export default class Game {
             this.item.moveToRandom();
         }
         
+        this.hud.showInfo(this.score);
         this.frame++;
     }
 }

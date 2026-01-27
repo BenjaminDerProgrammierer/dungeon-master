@@ -23,10 +23,5 @@ export const CONFIG = {
     animationSpeed: 7,
     moveSpeed: 1,
     movePerStep: 10,
-    playerScale: 0.5,
-    // surfaceSize: {
-    //     x: 640,
-    //     y: 320
-    // },
-    // surfaceScale: 0.8,
+    playerScale: 0.5
 }
