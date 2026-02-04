@@ -1,4 +1,4 @@
-import { CONFIG } from "../config.js";
+import config from "../config.js";
 
 /**
  * Keyboard listener that calculates a moving direction based on WASD / Arrow keys pressed
@@ -64,8 +64,8 @@ export default class KeyboardListener {
             y /= 2;
         }
 
-        x *= CONFIG.movePerStep;
-        y *= CONFIG.movePerStep
+        x *= config.movePerStep;
+        y *= config.movePerStep
 
         return {x: x, y: y};
     }

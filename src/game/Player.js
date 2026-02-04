@@ -1,13 +1,13 @@
-import { CONFIG } from "../config.js";
-import { Entity } from "./Entity.js";
+import config from "../config.js";
+import Entity from "./Entity.js";
 
-export class Player extends Entity {
+export default class Player extends Entity {
     spritesheet;
     spritesheetFrame = 0;
     spritesheetImgRef;
 
     constructor(container) {
-        super(container, CONFIG.startPosition, CONFIG.playerSize, CONFIG.playerScale);
+        super(container, config.startPosition, config.playerSize, config.playerScale);
         this.ref.classList.add("spritesheetBox");
 
         this.swapperRef = document.createElement('div');
@@ -18,8 +18,8 @@ export class Player extends Entity {
         this.swapperRef.appendChild(this.spritesheetImgRef);
 
         // Set starting position
-        this.ref.style.left = `${CONFIG.startPosition.x}px`;
-        this.ref.style.top = `${CONFIG.startPosition.y}px`;
+        this.ref.style.left = `${config.startPosition.x}px`;
+        this.ref.style.top = `${config.startPosition.y}px`;
     }
 
     move(distance) {
@@ -32,7 +32,7 @@ export class Player extends Entity {
             direction = 1;
         }
         this.swapperRef.style.transform = `scaleX(${direction})`;
-        super.move(distance.x, distance.y, { y: CONFIG.playerScale, x: CONFIG.playerScale }, direction);
+        super.move(distance.x, distance.y, { y: config.playerScale, x: config.playerScale }, direction);
     }
 
     /**
@@ -42,9 +42,9 @@ export class Player extends Entity {
     animate(speed) {
         speed = Math.abs(speed.x);
         if (speed > 0) {
-            this.spritesheet = CONFIG.spritesheets.walking;
+            this.spritesheet = config.spritesheets.walking;
         } else {
-            this.spritesheet = CONFIG.spritesheets.idle;
+            this.spritesheet = config.spritesheets.idle;
         }
         this.spritesheetImgRef.src = this.spritesheet.src;
 

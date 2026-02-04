@@ -1,4 +1,4 @@
-export class HeadUpDisplay {
+export default class HeadUpDisplay {
   ref;
 
   constructor(container) {

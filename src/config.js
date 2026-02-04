@@ -1,4 +1,4 @@
-export const CONFIG = {
+export default {
     startPosition: {
         x: 0,
         y: 0
@@ -23,5 +23,6 @@ export const CONFIG = {
     animationSpeed: 7,
     moveSpeed: 1,
     movePerStep: 10,
-    playerScale: 0.5
-}
+    playerScale: 0.5,
+    gameDuration: 2 * 60 * 1000 // 2 Minutes
+};

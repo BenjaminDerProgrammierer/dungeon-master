@@ -1,6 +1,6 @@
-import { CONFIG } from "../config.js";
+import config from "../config.js";
 
-export class Entity {
+export default class Entity {
   ref;
   position; // x, y
   size; // x, y
@@ -26,9 +26,9 @@ export class Entity {
     const rect = this.container.getBoundingClientRect();
     const bounds = {
       left: 0,
-      right: rect.right - this.ref.clientWidth * CONFIG.playerScale,
+      right: rect.right - this.ref.clientWidth * config.playerScale,
       top: 0,
-      bottom: rect.bottom - this.ref.clientHeight * CONFIG.playerScale
+      bottom: rect.bottom - this.ref.clientHeight * config.playerScale
     }
 
     if (this.position.x < bounds.left) {
