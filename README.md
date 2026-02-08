@@ -18,8 +18,11 @@ Sammelspiel: Sounddesign:
 Suche nach Sounds, die wirklich gut zu deinem Theme passen.
 Auf folgenden Seiten finden sich viele Audio-Templates:
 
-* https://mixkit.co/free-sound-effects/game/
-* https://www.zapsplat.com/
-* https://opengameart.org/art-search?keys=sounds
-* https://pixabay.com/de/sound-effects/search/game/
-* https://www.voicy.network/official-soundboards/games (Registrierung notwendig)
+* <https://mixkit.co/free-sound-effects/game/>
+* <https://www.zapsplat.com/>
+* <https://opengameart.org/art-search?keys=sounds>
+* <https://pixabay.com/de/sound-effects/search/game/>
+* <https://www.voicy.network/official-soundboards/games>
+* <https://itch.io/soundtracks>
+* <https://itch.io/game-assets/tag-sound-effects>
+* <https://itch.io/game-assets/tag-music>
