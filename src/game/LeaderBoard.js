@@ -17,6 +17,9 @@ export default class LeaderBoard extends Dialog {
         for (let i = 0; i < scoreboard.length; i++) {
             const score = scoreboard[i];
             const row = document.createElement('tr');
+            if (score.last === true) {
+                row.classList.add('last-score');
+            }
             row.innerHTML = `<td>${i + 1}</td><td>${score.nickname}</td><td>${score.score}</td>`;
             leaderboardTable.appendChild(row);
         }

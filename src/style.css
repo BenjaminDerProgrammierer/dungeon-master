@@ -201,8 +201,6 @@ body {
   }
 }
 
-/* <dialog class="dialog" open=""><div class="dialog-head"><h2>Leaderboard</h2><button>×</button></div><div class="dialog-content"><table class="leaderboard-table"><tr><th>Rank</th><th>Nickname</th><th>Score</th></tr><tr><td>1</td><td>Benji</td><td>2</td></tr><tr><td>2</td><td>Benji</td><td>1</td></tr><tr><td>3</td><td>Benji</td><td>1</td></tr><tr><td>4</td><td>Benji</td><td>0</td></tr><tr><td>5</td><td>Benji</td><td>0</td></tr><tr><td>6</td><td>Benji</td><td>0</td></tr><tr><td>7</td><td>Benji</td><td>0</td></tr><tr><td>8</td><td>Benji</td><td>0</td></tr><tr><td>9</td><td>Benji</td><td>0</td></tr></table></div></dialog> */
-
 .dialog {
   background: #00000080;
   color: #ffffff;
@@ -252,6 +250,10 @@ body {
       th {
         border: 1px solid #ffffff80;
         padding: 0.3rem;
+      }
+
+      .last-score {
+        background-color: #44444480;
       }
     }
   }
