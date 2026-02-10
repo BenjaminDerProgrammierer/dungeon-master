@@ -16,6 +16,7 @@ export default class Game {
     keyboardListener;
     hud;
     loopInterval;
+    backgroundMusic;
 
     constructor(appElement, nickname) {
         this.appElement = appElement;
@@ -32,6 +33,11 @@ export default class Game {
         this.timeStarted = Date.now();
 
         this.item.moveToRandom();
+
+        this.backgroundMusic = new Audio("assets/background-music/Dead Planet.wav");
+        this.backgroundMusic.loop = true;
+        this.backgroundMusic.volume = 0.05;
+        this.backgroundMusic.play();
 
         document.addEventListener('keydown', (e) => {
             if (e.key == 'k') {
@@ -55,6 +61,9 @@ export default class Game {
 
         if (this.player.isCollidingWith(this.item)) {
             this.score++;
+            const audio = new Audio('./assets/400 Sounds Pack/Items/coin_collect.wav');
+            audio.volume = 0.1;
+            audio.play();
             this.item.moveToRandom();
         }
 
@@ -68,6 +77,7 @@ export default class Game {
 
     end() {
         clearInterval(this.loopInterval);
+        this.backgroundMusic?.pause();
         dispatchEvent(new CustomEvent('gameOver', { detail: { nickname: this.nickname, score: this.score } }));
     }
 }

@@ -5,9 +5,22 @@ const nicknameElement = document.getElementById('nickname');
 nicknameElement.value = localStorage.getItem('nickname') || '';
 
 let game;
+let mainMenuMusic;
+
+document.addEventListener("click", () => {
+    if (!mainMenuMusic) {
+        mainMenuMusic = new Audio('assets/background-music/Magical Forest.wav');
+        mainMenuMusic.volume = 0.1;
+        mainMenuMusic.loop = true;
+        mainMenuMusic.play();
+    }
+});
 
 document.getElementById('startForm').addEventListener('submit', (event) => {
     event.preventDefault(); // Prevent reload
+
+    mainMenuMusic?.pause();
+    playButtonSound()
 
     const nickname = nicknameElement.value.trim()
     if (nickname === '') {
@@ -21,12 +34,17 @@ document.getElementById('startForm').addEventListener('submit', (event) => {
 })
 
 document.getElementById("restartButton").addEventListener("click", () => {
-    location.reload();
+    playButtonSound();
+    setTimeout(() => location.reload(), 500);
 });
 
 globalThis.addEventListener('gameOver', (event) => {
-    console.log("Game Over")
     game = null;
+
+    const audio = new Audio('./assets/400 Sounds Pack/Musical Effects/steel_drums_chime_positive.wav');
+    audio.volume = 0.5;
+    audio.play();
+
     const { nickname, score } = event.detail;
     let scoreboard = JSON.parse(localStorage.getItem('scoreboard') || '[]');
 
@@ -47,5 +65,12 @@ globalThis.addEventListener('gameOver', (event) => {
 });
 
 document.getElementById('leaderBoardButton').addEventListener('click', () => {
+    playButtonSound();
     new LeaderBoard().show(document.getElementById('titleScreen'));
 });
+
+function playButtonSound() {
+    const audio = new Audio('./assets/400 Sounds Pack/Materials/concrete_scrape.wav');
+    audio.volume = 0.5;
+    audio.play();
+}
